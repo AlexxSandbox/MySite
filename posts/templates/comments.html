@@ -6,13 +6,13 @@
     action="{% url 'add_comment' post.author.username post.id %}"
     method="post">
     {% csrf_token %}
-    <h5 class="card-header">Добавить комментарий:</h5>
+    <h5 class="card-header">Add comment:</h5>
     <div class="card-body">
     <form>
         <div class="form-group">
         {{ form.text|addclass:"form-control" }}
         </div>
-        <button type="submit" class="btn btn-primary">Отправить</button>
+        <button type="submit" class="btn btn-primary">Send</button>
     </form>
     </div>
 </form>

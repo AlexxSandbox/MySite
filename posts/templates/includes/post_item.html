@@ -6,7 +6,7 @@
     {% endthumbnail %}
 
     <div class="card-body">
-        <p class="card-text">
+        <p class="card-text" align="justify">
             <a name="post_{{ post.id }}" href="{% url 'profile' post.author.username %}">
                 <strong class="d-block text-gray-dark">@{{ post.author }}</strong>
             </a>
@@ -23,15 +23,15 @@
             <div class="btn-group ">
                 <a class="btn btn-sm text-muted" href="{% url 'post' post.author.username post.id %}" role="button">
                     {% if post.comments.exists %}
-                        {{ post.comments.count }} комментариев
+                        {{ post.comments.count }} comments
                     {% else%}
-                        Добавить комментарий
+                        Add comment
                     {% endif %}
                 </a>
                  {% if user == post.author %}
                  <a class="btn btn-sm text-muted" href="{% url 'post_edit' post.author.username post.id %}"
                         role="button">
-                        Редактировать
+                        Edit log
                 </a>
                 {% endif %}
             </div>

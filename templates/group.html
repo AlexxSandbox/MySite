@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% block title %} Записи сообщества {{ group.title }} {% endblock %}
+{% block title %} Group logs {{ group.title }} {% endblock %}
 
 {% block content %}
     <div class="container">
-           <h1> Записи сообщества {{ group.title }} </h1>
+           <h3 align="center" style="color:gray"> Group logs {{ group.title }} </h3>
                 {% for post in page %}
                     {% include "includes/post_item.html" with post=post %}
                 {% endfor %}

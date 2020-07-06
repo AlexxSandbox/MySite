@@ -2,12 +2,12 @@
     {% if following %}
     <a class="btn btn-lg btn-light"
        href="{% url 'profile_unfollow' author.username %}" role="button">
-        Отписаться
+        Unsubscribe
     </a>
     {% else %}
     <a class="btn btn-lg btn-primary"
        href="{% url 'profile_follow' author.username %}" role="button">
-        Подписаться
+        Subscribe
     </a>
     {% endif %}
 </li>
