@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Профиль автора{% endblock %}
+{% block content %}
+
+<main role="main" class="container">
+    <div class="row">
+        {% include 'includes/post_author_info.html' with author=author post_count=post_count %}
+            {% if subscribe and user != author %}
+                {% include 'includes/author_subscribe.html' with author=author following=following %}
+            {% endif %}
+                </ul>
+            </div>
+        </div>
+    <div class="col-md-9">
+        {% for post in page %}
+            {% include 'includes/post_item.html' with post=post show_comments_link=True %}
+        {% endfor %}
+        {% if page.has_other_pages %}
+            {% include 'paginator.html' with items=page paginator=paginator %}
+        {% endif %}
+    </div>
+    </div>
+</main>
+
+{% endblock %}

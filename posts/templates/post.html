@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Пост{% endblock %}
+{% block content %}
+
+<main role="main" class="container">
+    <div class="row">
+            {% include 'includes/post_author_info.html' with author=author post_count=post_count %}
+                {% if subscribe and user != author %}
+                        {% include 'includes/author_subscribe.html' with author=author following=following %}
+                    {% endif %}
+                        </ul>
+                    </div>
+                </div>
+        <div class="col-md-9">
+            {% include 'includes/post_item.html' with post=post %}
+            {% include 'comments.html' with comments=post.comments.all %}
+        </div>
+    </div>
+</main>
+
+{% endblock %}
