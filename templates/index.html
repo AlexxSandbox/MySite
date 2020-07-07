@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block title %} Last log entries {% endblock %}
+{% block title %} Последние записи {% endblock %}
 
 {% block content %}
     <div class="container">
         {% include 'menu.html' with index=True %}
-           <h3 align="center" style="color:gray"> Last log entries </h3>
+           <h3 align="center" style="color:gray"> Последние записи </h3>
                 {% load cache %}
                 {% cache 20 index_page page.number %}
                 {% for post in page %}

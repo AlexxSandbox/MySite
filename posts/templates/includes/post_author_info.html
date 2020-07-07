@@ -11,12 +11,19 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 <div class="h6 text-muted">
-                    Followers: {{ author.following.count }} <br />
-                    Follow: {{ author.follower.count}}
+                    Подписан: {{ author.following.count }} <br />
+                    Подписчиков: {{ author.follower.count}}
                 </div>
             </li>
             <li class="list-group-item">
                 <div class="h6 text-muted">
-                    Logs: {{ post_count }}
+                    Записей в журнале: {{ post_count }}
                 </div>
             </li>
+            {% if user.is_authenticated and user == author %}
+            <li class="list-group-item">
+                <div class="h6 text-muted">
+                    <a class="btn btn-lg btn-primary" href="{% url 'new_post' %}">Добавить запись</a>
+                </div>
+            </li>
+            {% endif %}

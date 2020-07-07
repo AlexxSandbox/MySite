@@ -5,10 +5,11 @@ from .models import Post, Comment
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('group', 'text', 'image')
-        labels = {'group': 'Сообщество', 'text': 'Текст поста', 'image': 'Изображение'}
+        fields = ('group','title', 'text', 'image')
+        labels = {'group': 'Сообщество', 'title': 'Заголовок', 'text': 'Текст поста', 'image': 'Изображение'}
         help_texts = {
             'group': 'Здесь ты выбираешь о чем будет твой пост',
+            'title': 'Придумай заголовок',
             'text': 'Напиши здесь что-то интересное и не забудь сохранить',
             'image': 'Добавь изображение для своего поста'
         }

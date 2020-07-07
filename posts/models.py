@@ -33,6 +33,7 @@ class Post(models.Model):
         null=True,
         verbose_name='Сообщество'
     )
+    title = models.CharField('Заголовок', max_length=200, blank=True, null=True)
     text = models.TextField('Текст блога')
     pub_date = models.DateTimeField('Дата публикации', auto_now_add=True)
     image = models.ImageField(upload_to='posts/', blank=True, null=True, verbose_name='Изображение')

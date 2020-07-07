@@ -6,34 +6,28 @@
     {% endthumbnail %}
 
     <div class="card-body">
+        <h3 align='center'>"{{ post.title }}"</h3>
         <p class="card-text" align="justify">
-            <a name="post_{{ post.id }}" href="{% url 'profile' post.author.username %}">
-                <strong class="d-block text-gray-dark">@{{ post.author }}</strong>
-            </a>
-                {{ post.text|linebreaksbr }}
+        <a name="post_{{ post.id }}" href="{% url 'profile' post.author.username %}"><strong class="d-block text-gray-dark">@{{ post.author }}</strong></a>
+        {{ post.text|linebreaksbr }}
         </p>
-
         {% if post.group %}
-            <a class="card-link muted" href="{% url 'group' post.group.slug %}">
-                    <strong class="d-block text-gray-dark">#{{ post.group.title }}</strong>
-            </a>
+        <a class="card-link muted" href="{% url 'group' post.group.slug %}"><strong class="d-block text-gray-dark">#{{ post.group.title }}</strong>
+        </a>
         {% endif %}
-
         <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group ">
-                <a class="btn btn-sm text-muted" href="{% url 'post' post.author.username post.id %}" role="button">
-                    {% if post.comments.exists %}
-                        {{ post.comments.count }} comments
-                    {% else%}
-                        Add comment
-                    {% endif %}
-                </a>
-                 {% if user == post.author %}
-                 <a class="btn btn-sm text-muted" href="{% url 'post_edit' post.author.username post.id %}"
-                        role="button">
-                        Edit log
-                </a>
+                {% if user == post.author %}
+                <a class="btn btn-sm text-muted" href="{% url 'post_edit' post.author.username post.id %}" role="button">Редактировать запись</a>
+                <a class="btn btn-sm text-muted" align="right" href="{% url 'post_delete' post.author.username post.id %}" role="button">Удалить запись</a>
                 {% endif %}
+                <a class="btn btn-sm text-muted" href="{% url 'post' post.author.username post.id %}" role="button">
+                {% if post.comments.exists %}
+                    Комментариев: {{ post.comments.count }}
+                {% else%}
+                    Добавить комментарий
+                {% endif %}
+                </a>
             </div>
             <small class="text-muted">{{ post.pub_date }}</small>
         </div>

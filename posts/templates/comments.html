@@ -6,13 +6,13 @@
     action="{% url 'add_comment' post.author.username post.id %}"
     method="post">
     {% csrf_token %}
-    <h5 class="card-header">Add comment:</h5>
+    <h6 class="card-header">Добавить комментарий:</h6>
     <div class="card-body">
     <form>
         <div class="form-group">
         {{ form.text|addclass:"form-control" }}
         </div>
-        <button type="submit" class="btn btn-primary">Send</button>
+        <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
     </div>
 </form>
@@ -22,13 +22,10 @@
 {% for comment in comments %}
 <div class="media mb-4">
 <div class="media-body">
-    <h5 class="mt-0">
-    <a
-        href="{% url 'profile' post.author.username %}"
-        name="comment_{{ item.id }}"
-        >{{ comment.author.username }}</a>
-    </h5>
-    {{ comment.text }}
+    <h6 class="mt-0">
+    <a href="{% url 'profile' post.author.username %}" name="comment_{{ item.id }}">@{{ comment.author.username }}</a>
+    </h6>
+    <p><i>"{{ comment.text }}"</i></p>
 </div>
     <small class="text-muted">{{ comment.created }}</small>
 </div>

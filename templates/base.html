@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% block title %}{% endblock %} | Alexxlogbook</title>
+    <title>{% block title %}{% endblock %} | Alexxbook</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
     <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
@@ -15,7 +15,7 @@
     {% include 'nav.html' %}
     <main>
         <div class="container">
-            <h1 align="center" style="color:Tomato">{% block header %}Logbook about hobby{% endblock %}</h1>
+            <h1 align="center" style="color:Tomato">{% block header %}Журнал о хобби{% endblock %}</h1>
             {% block content %}
             {% endblock %}
         </div>

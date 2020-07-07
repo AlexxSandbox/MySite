@@ -1,14 +1,14 @@
 <nav class="navbar navbar-light" style="background-color: #DCDCDC;">
-    <a class="navbar-brand" href="/"><span style="color:red">Alexx</span>logbook, {% now 'd b Y, D' %}</a>
+    <a class="navbar-brand" href="/"><span style="color:red">Alexx</span>book</a>
     <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="{% url 'new_post' %}">New log</a>
+        <!--<a class="p-2 text-dark" href="{% url 'new_post' %}">Добавить запись</a> |-->
         {% if user.is_authenticated %}
-        User: {{ user.username }}
-        <a class="p-2 text-dark" href="{% url 'password_change' %}">Change password</a>
-        <a class="p-2 text-dark" href="{% url 'logout' %}">LogOut</a>
+        Пользователь: {{ user.username }} |
+        <a class="p-2 text-dark" href="{% url 'password_change' %}">Изменить пароль</a> |
+        <a class="p-2 text-dark" href="{% url 'logout' %}">Выйти</a>
         {% else %}
-        <a class="p-2 text-dark" href="{% url 'login' %}">LogIn</a> |
-        <a class="p-2 text-dark" href="{% url 'signup' %}">Registration</a>
+        <a class="p-2 text-dark" href="{% url 'login' %}">Войти</a> |
+        <a class="p-2 text-dark" href="{% url 'signup' %}">Регистрация</a>
         {% endif %}
     </nav>
 </nav>

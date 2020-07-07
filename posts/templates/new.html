@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{% if not post %}Add log{% else %}Редактировать запись{% endif %}{% endblock %}
+{% block title %}{% if not post %}Добавить запись{% else %}Редактировать запись{% endif %}{% endblock %}
 {% block content %}
 {% load user_filters %}
 
@@ -25,9 +25,9 @@
                     <div class="col-md-6 offset-md-4">
                             <button type="submit" class="btn btn-primary">
                                 {% if not post %}
-                                    Add log
+                                    Добавить
                                 {% else %}
-                                    Save log
+                                    Сохранить
                                 {% endif %}
                             </button>
                     </div>

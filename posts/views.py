@@ -98,6 +98,19 @@ def post_edit(request, username, post_id):
     return render(request, 'new.html', {'form': form, 'post': post})
 
 
+def post_delete(request, username, post_id):
+    post = get_object_or_404(Post, id=post_id, author__username=username)
+    profile_url = reverse('profile', args=(post.author.username,))
+
+    if post.author != request.user:
+        return redirect('index')
+
+    if post:
+        post.delete()
+
+    return redirect(profile_url)
+
+
 @login_required
 def add_comment(request, username, post_id):
     post = get_object_or_404(Post, id=post_id, author__username=username)
