@@ -6,12 +6,12 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('group','title', 'text', 'image')
-        labels = {'group': 'Сообщество', 'title': 'Заголовок', 'text': 'Текст поста', 'image': 'Изображение'}
+        labels = {'group': 'Group', 'title': 'Title', 'text': 'Description', 'image': 'Picture'}
         help_texts = {
-            'group': 'Здесь ты выбираешь о чем будет твой пост',
-            'title': 'Придумай заголовок',
-            'text': 'Напиши здесь что-то интересное и не забудь сохранить',
-            'image': 'Добавь изображение для своего поста'
+            'group': 'Here you choose what your post will be about.',
+            'title': 'Write title to you log.',
+            'text': 'Write something interesting here and don’t forget to save.',
+            'image': 'Add picture to your log.'
         }
 
 
@@ -19,5 +19,5 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('text',)
-        labels = {'text': 'Текст комментария'}
-        help_texts = {'text': 'Если только вам есть что написать'}
+        labels = {'text': 'Comment text'}
+        help_texts = {'text': 'Think about it well'}
