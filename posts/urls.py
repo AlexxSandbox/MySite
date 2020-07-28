@@ -1,10 +1,15 @@
 from django.urls import path
 from . import views
-
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('', views.index, name='index'),
     path('new/', views.new_post, name='new_post'),
+
+    path('api/v1/posts/', views.api_posts),
+    path('api/v1/posts/<int:id>/', views.api_posts_detail),
+    path('api/v1/api-token-auth/', obtain_auth_token),
+
     path('group/<slug:slug>/', views.group_posts, name='group'),
     path('follow/', views.follow_index, name='follow_index'),
     path('<str:username>/', views.profile, name='profile'),
