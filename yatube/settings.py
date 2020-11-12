@@ -150,7 +150,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 
 # идентификатор текущего сайта
-SITE_ID = 4
+SITE_ID = 5
 
 CACHES = {
     'default': {
