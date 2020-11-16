@@ -5,9 +5,10 @@
 ![GitHub](https://img.shields.io/github/license/AlexxSandbox/MiSite)
 
 ### About
-Site for blogging. This is the final project in the Django Programming course.
+Site for blogging. This is the final project in the Django Programming course. The site supports user registration, there is an administrator page, you can create groups, you can comment on the posts of other authors, there is a subscription service.
 
-### Sources
-- **Algorithms** - different exercises about algorithms
-- **API** - testing application programming interface (API)
-- **Encryption** - testing encryption packages
+### Technology
+- **Django** - High-level Python Web framework, used to write the main logic of the site, queries to the database, displaying data.
+- **PostgreSQL** - database for storing data
+- **HTML** - page layout
+- **CSS** - styles for page objects
