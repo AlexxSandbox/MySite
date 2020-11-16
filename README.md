@@ -15,6 +15,6 @@ Site for blogging. This is the final project in the Django Programming course.
 
 ### Technology
 - **Django** - High-level Python Web framework, used to write the main logic of the site, queries to the database, displaying data.
-- **PostgreSQL** - database for storing data
+- **DB** - database for storing data
 - **HTML** - page layout
 - **CSS** - styles for page objects
