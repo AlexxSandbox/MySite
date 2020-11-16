@@ -1,6 +1,6 @@
 # AlexxBook
 ![GitHub top language](https://img.shields.io/github/languages/top/AlexxSandbox/MySite)
-![GitHub top language](https://img.shields.io/github/languages/top/AlexxSandbox/Sandbox_Python)
+![GitHub top language](https://img.shields.io/github/languages/top/AlexxSandbox/MySite)
 ![Lines of code](https://img.shields.io/tokei/lines/github/AlexxSandbox/MySite)
 ![GitHub last commit](https://img.shields.io/github/last-commit/AlexxSandbox/MySite)
 ![GitHub](https://img.shields.io/github/license/AlexxSandbox/MiSite)
